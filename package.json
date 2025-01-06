@@ -9,7 +9,10 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "homepage": "https://notharshagithub.github.io/<repository-name>",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+  "homepage": "https://notharshagithub.github.io/travel-ai-planer",
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "@radix-ui/react-dialog": "^1.1.4",
