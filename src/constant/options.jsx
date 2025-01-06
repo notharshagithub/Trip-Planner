@@ -63,7 +63,7 @@ icon:'💵',
 
 export const AI_PROMPT = 
 
-  "Generate Travel Plan for Location : {location} for {totalDays} Days for {traveles} with a {budget} budget, Give me a Hotels options list with HotelName,Hotel address,Price, hotel image url,geo coordinates,rating,descriptions and suggest itinerary with placeName,Place Details,Place Image Url, Geo Coordinates,ticket Pricing,rating,Time travel each of the location for {totalDays} days with each day plan with best time to visit and the iliterary should be in array formate and the entire in JSON format.";
+  "Generate Travel Plan for Location : {location} for {totalDays} Days for {traveles} with a {budget} budget, Give me a Hotels options list with HotelName,Hotel address,Price, hotel image url,geo coordinates,rating,descriptions and suggest itinerary array with placeName,Place Details,Place Image Url, Geo Coordinates,ticket Pricing,rating,Time travel each of the location for {totalDays} days with each day plan with best time to visit and the iliterary should be in array formate and the entire in JSON format.";
 
 
 

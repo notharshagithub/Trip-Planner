@@ -226,7 +226,7 @@ const GetUserProfile = async (tokenInfo) => {
 
 <div className='mt-10 justify-end'>
 <Button onClick={GenerateTrip}>Generate Trip</Button>
-
+<h3 className='text-gray-500'>*Please wait for a few seconds after clicking*</h3>
 </div>
 
 
@@ -243,6 +243,7 @@ const GetUserProfile = async (tokenInfo) => {
         disabled={loading}
         onClick={login}
         className='w-full mt-5 gap-4'>Sign In</Button>
+        
        
       </DialogDescription>
     </DialogHeader>

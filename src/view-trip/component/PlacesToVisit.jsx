@@ -9,18 +9,12 @@ function PlacesToVisit({ trip }) {
 
       <div>
         {trip?.tripData?.itinerary?.map((item, index) => (
-          <div>
-            {trip?.tripData?.itinerary.map((item, index) => (
-              <div>
-                <h2 className="font-medium text-lg">Day {item.day}</h2>
-                {item.activities.map((place, index) => (
-                  <div className="my-5">
-                    <PlaceCarditem place={place} />
-                    <h2>{place.place_name}</h2>
-
-                    <h2>{place.time_travel}</h2>
-                  </div>
-                ))}
+          <div key={index}>
+            <h2 className="font-medium text-lg">Day {item.day}</h2>
+            {item.activities.map((place, activityIndex) => (
+              <div key={activityIndex} className="my-5">
+                <PlaceCarditem place={place} />
+                
               </div>
             ))}
           </div>

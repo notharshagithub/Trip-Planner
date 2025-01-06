@@ -1,18 +1,14 @@
 {
-  "name": "travel-ai-planer",
+  "name": "ai-trip-planner",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ]
-  "homepage": "https://notharshagithub.github.io/travel-ai-planer",
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "@radix-ui/react-dialog": "^1.1.4",

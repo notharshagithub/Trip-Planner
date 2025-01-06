@@ -11,30 +11,30 @@ import {IoIosSend} from 'react-icons/io'
 //   import.meta.env.VITE_GOOGLE_PLACE_API_KEY;n
 
 function InfoSec({trip}) {
-  const [photoUrl, setPhotoUrl] = useState();
-  useEffect(() => {
-    trip && GetPlaceImg();
-  }, [trip]);
+  // const [photoUrl, setPhotoUrl] = useState();
+  // useEffect(() => {
+  //   trip && GetPlaceImg();
+  // }, [trip]);
 
-  const GetPlaceImg = async () => {
-    const data = {
-      textQuery: trip?.userSelection?.location?.label,
-    };
-    const result = await GetPlaceDetails(data).then((resp) => {
-      // console.log(resp.data.places[0].photos[3].name)
-      const PhotoUrl = PHOTO_REF_URL.replace(
-        "{NAME}",
-        resp.data.places[0].photos[3].name
-      );
-      setPhotoUrl(PhotoUrl);
-    });
-  };
+  // const GetPlaceImg = async () => {
+  //   const data = {
+  //     textQuery: trip?.userSelection?.location?.label,
+  //   };
+  //   const result = await GetPlaceDetails(data).then((resp) => {
+  //     // console.log(resp.data.places[0].photos[3].name)
+  //     const PhotoUrl = PHOTO_REF_URL.replace(
+  //       "{NAME}",
+  //       resp.data.places[0].photos[3].name
+  //     );
+  //     setPhotoUrl(PhotoUrl);
+  //   });
+  // };
 
   return (
     <div className="flex-wrap">
       <div>
-        <img
-          src={photoUrl ? photoUrl : "/placeholder.jpeg"}
+        <img src = '/placeholder.jpeg'
+          // src={photoUrl ? photoUrl : "/placeholder.jpeg"}
           className="h-[350px] w-full object-cover rounded-2xl"
         />
       </div>
