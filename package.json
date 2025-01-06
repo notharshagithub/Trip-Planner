@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "homepage": "https://notharshagithub.github.io/<repository-name>",
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "@radix-ui/react-dialog": "^1.1.4",
