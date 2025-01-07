@@ -78,35 +78,38 @@ const login = useGoogleLogin({
 
 
 
-const GenerateTrip=async ()=>{
-  
-   const user = localStorage.getItem('user');
+const GenerateTrip = async () => {
+  const user = localStorage.getItem("user");
 
-   if(!user){
-   
- setOpenDialog(true);
-}
+  if (!user) {
+    setOpenDialog(true);
+    return; // Stop execution until user signs in
+  }
 
-    if(formData?.noOfDays>5&&!formData?.travels||!formData?.budget||!formData?.location){
-        toast("Please fill all the fields")
-        return ;
-    }
-   setLoading(true);
-  const FINAL_PROMPT = AI_PROMPT
-  .replace('{location}', formData.location?.label)
-  .replace('{totalDays}', formData.noOfDays)
-  .replace('{travels}', formData?.travels)
-  .replace('{budget}', formData?.budget)
-  .replace('{totalDays}', formData.noOfDays)
+  // Ensure all required fields are filled
+  if (
+    !formData?.location ||
+    !formData?.noOfDays ||
+    !formData?.travels ||
+    !formData?.budget
+  ) {
+    toast("Please fill all the fields");
+    return;
+  }
 
- 
+  setLoading(true);
+  const FINAL_PROMPT = AI_PROMPT.replace("{location}", formData.location?.label)
+    .replace("{totalDays}", formData.noOfDays)
+    .replace("{travels}", formData?.travels)
+    .replace("{budget}", formData?.budget)
+    .replace("{totalDays}", formData.noOfDays);
 
- const result = await chatSession.sendMessage(FINAL_PROMPT);
+  const result = await chatSession.sendMessage(FINAL_PROMPT);
 
- console.log("--"+result?.response?.text());
- setLoading(false);
- SaveAiTrip(result?.response?.text());
-}
+  console.log("--" + result?.response?.text());
+  setLoading(false);
+  SaveAiTrip(result?.response?.text());
+};
 
 
 
